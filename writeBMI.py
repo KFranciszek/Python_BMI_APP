@@ -1,5 +1,6 @@
 from dicBMI import team
 
+
 def writeBMI(team):
     w = open("BMI_TEAM.txt", 'w')
     for i in team:
@@ -8,3 +9,12 @@ def writeBMI(team):
 
 
 writeBMI (team)
+
+import json
+def writeJSON():
+    filename = ('D:\Python\Projekt\dane.json')
+    users=team
+    with open(filename, 'w') as outfile:
+        json.dump(users,outfile)
+
+writeJSON()
