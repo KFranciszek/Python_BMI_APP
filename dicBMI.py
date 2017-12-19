@@ -1,14 +1,22 @@
-
 from scoreBMI import scoreBMI_data
-
 team = []
 def DicBMI_data():
     member = True
     while member:
 
         name = input('Podaj imie')
-        weight = int(input('Podaj swoją wage'))
-        height = float(input('Podaj swój wzrost'))
+        while True:
+            try:
+                weight = int(input('Podaj swoją wage'))
+                break
+            except ValueError:
+                print("ERROR")
+        while True:
+           try:
+                height = float(input('Podaj swój wzrost'))
+                break
+           except ValueError:
+                print("ERROR")
         bmi = weight//(2*height)
         bmiinfo2=scoreBMI_data(bmi)
 
