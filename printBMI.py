@@ -7,5 +7,5 @@ def BMI_print ():
 
 
 
-info=BMI_print()
+BMI_print()
 
