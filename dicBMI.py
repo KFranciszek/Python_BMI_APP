@@ -3,7 +3,7 @@ team = []
 def DicBMI_data():
     member = True
     while member:
-
+        gender = input('Podaj płeć')  
         name = input('Podaj imie')
         while True:
             try:
@@ -18,7 +18,7 @@ def DicBMI_data():
            except ValueError:
                 print("ERROR")
         bmi = weight//(2*height)
-        bmiinfo2=scoreBMI_data(bmi)
+        bmiinfo2=scoreBMI_data(bmi, gender)
 
         bmiDic = {'gender': gender,'name': name, 'weight': weight, 'height':height,'bmi': bmi, 'score': bmiinfo2}
 
