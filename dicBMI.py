@@ -20,7 +20,7 @@ def DicBMI_data():
         bmi = weight//(2*height)
         bmiinfo2=scoreBMI_data(bmi)
 
-        bmiDic = {'name': name, 'weight': weight, 'height':height,'bmi': bmi, 'score': bmiinfo2}
+        bmiDic = {'gender': gender,'name': name, 'weight': weight, 'height':height,'bmi': bmi, 'score': bmiinfo2}
 
         team.append(bmiDic)
 
