@@ -1,6 +1,8 @@
 import psycopg2
-
+import  random
+import base64
 symbol =['!','@',"#","$","%","&","*","/","?"]
+userid = random.getrandbits(10)
 def account ():
 
     login = str(input("Your email"))
@@ -17,13 +19,14 @@ def account ():
         else:
             break
 
-    conn = psycopg2.connect("dbname='postgres' user='xyz' host='localhost' password='xyz'")
+    conn = psycopg2.connect("dbname='bmi' user='xxx' host='xx' password='xxx'")
     print("Succes connect")
     cur = conn.cursor()
-    cur.execute("""INSERT INTO users(login, password) VALUES (%(login)s,%(password)s)""",
-                {'login': login, 'password': password})
+    password=base64.b64encode(bytes(password, 'utf8'))
+    cur.execute("""INSERT INTO users(login, password, userid) VALUES (%(login)s,%(password)s,%(userid)s)""",
+                {'login': login, 'password': password, 'userid':userid})
     conn.commit()
     cur.close()
-    # except:
+  
 
 account()
